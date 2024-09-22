@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('noyrakice.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 20px;
+    transition: transform 0.4s ease, background-color 0.4s ease; /* เพิ่ม ease สำหรับความสมูท */
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+.heart.liked {
+    transform: scale(1.2) rotate(-45deg);
+    background-color: pink; /* เปลี่ยนสีเมื่อคลิก */
+}
